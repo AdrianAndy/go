@@ -1,0 +1,1665 @@
+{
+    "Resources": {
+        "CoreCIDR": {
+            "Properties": {
+                "Description": "Origin Energy Core CIDR",
+                "Name": "/origin/core/network/cidr",
+                "Type": "String",
+                "Value": "10.0.0.0/8"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DNSHostedZoneBuild": {
+            "Properties": {
+                "Description": "DNS Hosted Zone ID for Route 53 API - ETRM Build Account",
+                "Name": "/ETRM/build/hosted-zone/build.etrm.io/zone-id",
+                "Type": "String",
+                "Value": "Z1IPJ2ZG7YTCNH"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DNSHostedZoneDigital": {
+            "Properties": {
+                "Description": "DNS Hosted Zone ID for Route 53 API - Digital Build Account",
+                "Name": "/Digital/build/hosted-zone/etrm.io/zone-id",
+                "Type": "String",
+                "Value": "ZW3ED42VQ2VHZ"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DNSHostedZoneNonProd": {
+            "Properties": {
+                "Description": "DNS Hosted Zone ID for Route 53 API - non-prod",
+                "Name": "/ETRM/nonprod/hosted-zone/non-prod.etrm.io/zone-id",
+                "Type": "String",
+                "Value": "Z1MCJR5T970QMC"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DNSHostedZoneProduction": {
+            "Properties": {
+                "Description": "DNS Hosted zone - TBC",
+                "Name": "/ETRM/production/hosted-zone/prod.etrm.io/zone-id",
+                "Type": "String",
+                "Value": "ZE0PQQ206ULHL"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DNSHostedZoneSharedANP": {
+            "Properties": {
+                "Description": "DNS Hosted Zone ID for Route 53 API - Cloud Shared Applications Non-Prod",
+                "Name": "/shared/nonprod/hosted-zone/anp.orgn.io/zone-id",
+                "Type": "String",
+                "Value": "Z3OA12ETAFYMQA"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DNSHostedZoneSharedAP": {
+            "Properties": {
+                "Description": "DNS Hosted Zone ID for Route 53 API - Cloud Shared Applications Prod",
+                "Name": "/shared/production/hosted-zone/ap.orgn.io/zone-id",
+                "Type": "String",
+                "Value": "Z15C589VNDETDY"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalBuildcidr": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital Build CIDR",
+                "Name": "/digital/build/network/cidr",
+                "Type": "String",
+                "Value": "10.201.240.0/20"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalCloudIPrange": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital Cloud CIDR",
+                "Name": "/digital/cloud/network/cidr",
+                "Type": "String",
+                "Value": "10.202.0.0/14"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildInternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Internal 1 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/Internal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.243.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildInternal1ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Internal 1 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/Internal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-37b60e53"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildInternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Internal 2 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/Internal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.244.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildInternal2ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Internal 2 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/Internal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b7db7ac1"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildInternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Internal 3 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/Internal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.245.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildInternal3ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Internal 3 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/Internal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-4eff2e17"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterExternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Perimeter external 1 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/PerimeterExternal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.249.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterExternal1ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Perimeter external 1 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/PerimeterExternal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-36b60e52"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterExternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Perimeter external 2 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/PerimeterExternal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.250.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterExternal2ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Perimeter external 2 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/PerimeterExternal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b6db7ac0"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterExternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Perimeter external 3 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/PerimeterExternal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.251.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterExternal3ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Perimeter external 3 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/PerimeterExternal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-41ff2e18"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterInternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Perimeter Internal 1 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/PerimeterInternal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.246.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterInternal1ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Perimeter Internal 1 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/PerimeterInternal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-34b60e50"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterInternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Perimeter Internal 2 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/PerimeterInternal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.247.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterInternal2ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Perimeter Internal 2 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/PerimeterInternal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b5db7ac3"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterInternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney Perimeter Internal 3 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/PerimeterInternal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.248.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildPerimeterInternal3ID": {
+            "Properties": {
+                "Description": "Digital build Sydney Perimeter Internal 3 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/PerimeterInternal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-43ff2e1a"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedMgmt1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney ReservedMgmt 1 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/ReservedMgmt1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.240.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedMgmt1ID": {
+            "Properties": {
+                "Description": "Digital build Sydney ReservedMgmt 1 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/ReservedMgmt1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-35b60e51"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedMgmt2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney ReservedMgmt 2 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/ReservedMgmt2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.241.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedMgmt2ID": {
+            "Properties": {
+                "Description": "Digital build Sydney ReservedMgmt 2 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/ReservedMgmt2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b2db7ac4"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedMgmt3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney ReservedMgmt 3 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/ReservedMgmt3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.242.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedMgmt3ID": {
+            "Properties": {
+                "Description": "Digital build Sydney ReservedMgmt 3 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/ReservedMgmt3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-40ff2e19"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedNet1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney ReservedNet 1 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/ReservedNet1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.240.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedNet1ID": {
+            "Properties": {
+                "Description": "Digital build Sydney ReservedNet 1 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2a/ReservedNet1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-30b60e54"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedNet2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney ReservedNet 2 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/ReservedNet2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.241.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedNet2ID": {
+            "Properties": {
+                "Description": "Digital build Sydney ReservedNet 2 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2b/ReservedNet2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b4db7ac2"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedNet3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital build Sydney ReservedNet 3 CIDR",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/ReservedNet3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.201.242.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DigitalbuildReservedNet3ID": {
+            "Properties": {
+                "Description": "Digital build Sydney ReservedNet 3 ID",
+                "Name": "/Digital/build/vpc/ap-southeast-2c/ReservedNet3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-42ff2e1b"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "DirectConnectCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "CIDR for Direct Connect to On-Premise",
+                "Name": "/origin/DirectConnect/network/cidr",
+                "Type": "String",
+                "Value": "169.254.247.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPrivate1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build Sydney private subnet 1a CIDR",
+                "Name": "/ETRM/build/vpc/ap-southeast-2a/PrivateSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.140.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPrivate1aID": {
+            "Properties": {
+                "Description": "ETRM Build Sydney private subnet 1a ID",
+                "Name": "/ETRM/build/vpc/ap-southeast-2a/PrivateSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-07258abd3583cd8db"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPrivate1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build Sydney private subnet 1b CIDR",
+                "Name": "/ETRM/build/vpc/ap-southeast-2b/PrivateSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.141.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPrivate1bID": {
+            "Properties": {
+                "Description": "ETRM Build Sydney private subnet 1b ID",
+                "Name": "/ETRM/build/vpc/ap-southeast-2b/PrivateSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-0a01ff77661a2f268"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPrivate1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build Sydney private subnet 1c CIDR",
+                "Name": "/ETRM/build/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.141.64/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPrivate1cID": {
+            "Properties": {
+                "Description": "ETRM Build Sydney private subnet 1c ID",
+                "Name": "/ETRM/build/vpc/ap-southeast-2c/PrivateSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-07155f0093c40b6dd"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPublic1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build Sydney public subnet 1a CIDR",
+                "Name": "/ETRM/build/vpc/ap-southeast-2a/PublicSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.140.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPublic1aID": {
+            "Properties": {
+                "Description": "ETRM Build Sydney public subnet 1a ID",
+                "Name": "/ETRM/build/vpc/ap-southeast-2a/PublicSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-0fede6dfdbfc9846a"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPublic1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build Sydney public subnet 1b CIDR",
+                "Name": "/ETRM/build/vpc/ap-southeast-2b/PublicSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.140.64/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPublic1bID": {
+            "Properties": {
+                "Description": "ETRM Build Sydney public subnet 1b ID",
+                "Name": "/ETRM/build/vpc/ap-southeast-2b/PublicSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-098f13736f5c212d6"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPublic1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build Sydney public subnet 1c CIDR",
+                "Name": "/ETRM/build/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.140.128/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMBuildPublic1cID": {
+            "Properties": {
+                "Description": "ETRM Build Sydney public subnet 1c ID",
+                "Name": "/ETRM/build/vpc/ap-southeast-2c/PublicSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-04990463953e17019"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Internal 1 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/Internal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.35.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal1ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Internal 1 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/Internal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-db7703ad"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Internal 2 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/Internal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.36.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal2ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Internal 2 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/Internal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-dd4102b9"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Internal 3 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/Internal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.37.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal3ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Internal 3 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/Internal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-0c890855"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal4CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Internal 4 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/Internal4/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.64.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal4ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Internal 4 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/Internal4/subnet-id",
+                "Type": "String",
+                "Value": "subnet-08339441"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal5CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Internal 5 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/Internal5/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.68.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal5ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Internal 5 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/Internal5/subnet-id",
+                "Type": "String",
+                "Value": "subnet-4d94202a"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal6CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Internal 6 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/Internal6/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.72.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdInternal6ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Internal 6 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/Internal6/subnet-id",
+                "Type": "String",
+                "Value": "subnet-e30c0cba"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterExternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Perimeter external 1 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/PerimeterExternal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.41.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterExternal1ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Perimeter external 1 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/PerimeterExternal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-61750117"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterExternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Perimeter external 2 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/PerimeterExternal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.42.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterExternal2ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Perimeter external 2 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/PerimeterExternal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-0a47046e"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterExternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Perimeter external 3 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/PerimeterExternal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.43.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterExternal3ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Perimeter external 3 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/PerimeterExternal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-1386074a"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterInternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Perimeter Internal 1 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/PerimeterInternal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.38.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterInternal1ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Perimeter Internal 1 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/PerimeterInternal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-c67400b0"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterInternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Perimeter Internal 2 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/PerimeterInternal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.39.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterInternal2ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Perimeter Internal 2 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/PerimeterInternal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-8a4605ee"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterInternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney Perimeter Internal 3 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/PerimeterInternal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.40.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdPerimeterInternal3ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney Perimeter Internal 3 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/PerimeterInternal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-f98607a0"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedMgmt1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney ReservedMgmt 1 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/ReservedMgmt1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.32.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedMgmt1ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney ReservedMgmt 1 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/ReservedMgmt1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-74770302"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedMgmt2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney ReservedMgmt 2 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/ReservedMgmt2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.33.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedMgmt2ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney ReservedMgmt 2 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/ReservedMgmt2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b04704d4"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedMgmt3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney ReservedMgmt 3 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/ReservedMgmt3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.34.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedMgmt3ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney ReservedMgmt 3 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/ReservedMgmt3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-5489080d"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedNet1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney ReservedNet 1 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/ReservedNet1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.32.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedNet1ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney ReservedNet 1 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2a/ReservedNet1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-34760242"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedNet2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney ReservedNet 2 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/ReservedNet2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.33.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedNet2ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney ReservedNet 2 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2b/ReservedNet2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-dc4102b8"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedNet3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Prod Sydney ReservedNet 3 CIDR",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/ReservedNet3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.200.34.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMProdReservedNet3ID": {
+            "Properties": {
+                "Description": "ETRM Prod Sydney ReservedNet 3 ID",
+                "Name": "/ETRM/prod/vpc/ap-southeast-2c/ReservedNet3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-c686079f"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Internal 1 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/Internal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.35.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal1ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Internal 1 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/Internal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-57770321"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Internal 2 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/Internal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.36.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal2ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Internal 2 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/Internal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-7842011c"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Internal 3 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/Internal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.37.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal3ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Internal 3 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/Internal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-be8706e7"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal4CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Internal 4 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/Internal4/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.64.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal4ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Internal 4 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/Internal4/subnet-id",
+                "Type": "String",
+                "Value": "subnet-012a8d48"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal5CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Internal 5 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/Internal5/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.68.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal5ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Internal 5 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/Internal5/subnet-id",
+                "Type": "String",
+                "Value": "subnet-dcab1fbb"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal6CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Internal 6 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/Internal6/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.72.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodInternal6ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Internal 6 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/Internal6/subnet-id",
+                "Type": "String",
+                "Value": "subnet-7c111125"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterExternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Perimeter external 1 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/PerimeterExternal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.41.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterExternal1ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Perimeter external 1 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/PerimeterExternal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-fa77038c"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterExternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Perimeter external 2 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/PerimeterExternal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.42.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterExternal2ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Perimeter external 2 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/PerimeterExternal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-dd4003b9"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterExternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Perimeter external 3 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/PerimeterExternal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.43.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterExternal3ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Perimeter external 3 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/PerimeterExternal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-c8860791"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterInternal1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Perimeter Internal 1 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/PerimeterInternal1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.38.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterInternal1ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Perimeter Internal 1 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/PerimeterInternal1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-e5740093"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterInternal2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Perimeter Internal 2 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/PerimeterInternal2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.39.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterInternal2ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Perimeter Internal 2 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/PerimeterInternal2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-973c7ff3"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterInternal3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney Perimeter Internal 3 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/PerimeterInternal3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.40.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodPerimeterInternal3ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney Perimeter Internal 3 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/PerimeterInternal3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-c9860790"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedMgmt1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney ReservedMgmt 1 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/ReservedMgmt1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.32.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedMgmt1ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney ReservedMgmt 1 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/ReservedMgmt1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-977703e1"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedMgmt2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney ReservedMgmt 2 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/ReservedMgmt2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.33.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedMgmt2ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney ReservedMgmt 2 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/ReservedMgmt2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-05400361"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedMgmt3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney ReservedMgmt 3 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/ReservedMgmt3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.34.0/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedMgmt3ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney ReservedMgmt 3 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/ReservedMgmt3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-bf8706e6"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedNet1CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney ReservedNet 1 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/ReservedNet1/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.32.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedNet1ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney ReservedNet 1 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2a/ReservedNet1/subnet-id",
+                "Type": "String",
+                "Value": "subnet-fd77038b"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedNet2CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney ReservedNet 2 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/ReservedNet2/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.33.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedNet2ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney ReservedNet 2 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2b/ReservedNet2/subnet-id",
+                "Type": "String",
+                "Value": "subnet-53410237"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedNet3CIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM nonprod Sydney ReservedNet 3 CIDR",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/ReservedNet3/subnet-cidr",
+                "Type": "String",
+                "Value": "10.202.34.192/26"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "ETRMnonprodReservedNet3ID": {
+            "Properties": {
+                "Description": "ETRM nonprod Sydney ReservedNet 3 ID",
+                "Name": "/ETRM/nonprod/vpc/ap-southeast-2c/ReservedNet3/subnet-id",
+                "Type": "String",
+                "Value": "subnet-50880909"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodCloudMgmt1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney CloudMgmt subnet 1a CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/CloudMgmtSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.204.73.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodCloudMgmt1aID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney CloudMgmt subnet 1a ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/CloudMgmtSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-68d0ca0c"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodCloudMgmt1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney CloudMgmt subnet 1b CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/CloudMgmtSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.204.74.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodCloudMgmt1bID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney CloudMgmt subnet 1b ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/CloudMgmtSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-20d6dd56"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodCloudMgmt1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney CloudMgmt subnet 1c CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.204.75.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodCloudMgmt1cID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney CloudMgmt subnet 1c ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/CloudMgmtSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-d64e0e8f"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPerimeter1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney Perimeter subnet 1a CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/PerimeterSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.204.70.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPerimeter1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney Perimeter subnet 1b CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/PerimeterSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.204.71.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPerimeter1bID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney Perimeter subnet 1b ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/PerimeterSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-bdd6ddcb"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPerimeter1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney Perimeter subnet 1c CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.204.72.0/24"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPerimeter1cID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney Perimeter subnet 1c ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PerimeterSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-a84e0ef1"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPrivate1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney private subnet 1a CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/PrivateSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.0.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPrivate1aID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney private subnet 1a ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/PrivateSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-46065b30"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPrivate1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney private subnet 1b CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/PrivateSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.4.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPrivate1bID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney private subnet 1b ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/PrivateSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-e68ba482"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPrivate1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney private subnet 1c CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.8.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPrivate1cID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney private subnet 1c ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PrivateSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-ecbb23b5"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPublic1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney public subnet 1a CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/PublicSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.52.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPublic1aID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney public subnet 1a ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/PublicSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-07035e71"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPublic1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney public subnet 1b CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/PublicSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.56.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPublic1bID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney public subnet 1b ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2b/PublicSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-e78ba483"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPublic1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications nonprod Sydney public subnet 1c CIDR",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.60.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodPublic1cID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney public subnet 1c ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b9b921e0"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsnonprodperimeter1aID": {
+            "Properties": {
+                "Description": "SharedApplications nonprod Sydney Perimeter subnet 1a ID",
+                "Name": "/SharedApplications/nonprod/vpc/ap-southeast-2a/PerimeterSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-f9d2c89d"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPrivate1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications prod Sydney private subnet 1a CIDR",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2a/PrivateSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.0.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPrivate1aID": {
+            "Properties": {
+                "Description": "SharedApplications prod Sydney private subnet 1a ID",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2a/PrivateSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-46065b30"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPrivate1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications prod Sydney private subnet 1b CIDR",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2b/PrivateSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.4.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPrivate1bID": {
+            "Properties": {
+                "Description": "SharedApplications prod Sydney private subnet 1b ID",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2b/PrivateSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-e68ba482"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPrivate1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications prod Sydney private subnet 1c CIDR",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.8.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPrivate1cID": {
+            "Properties": {
+                "Description": "SharedApplications prod Sydney private subnet 1c ID",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2c/PrivateSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-ecbb23b5"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPublic1aCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications prod Sydney public subnet 1a CIDR",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2a/PublicSubnet1a/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.52.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPublic1aID": {
+            "Properties": {
+                "Description": "SharedApplications prod Sydney public subnet 1a ID",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2a/PublicSubnet1a/subnet-id",
+                "Type": "String",
+                "Value": "subnet-07035e71"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPublic1bCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications prod Sydney public subnet 1b CIDR",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2b/PublicSubnet1b/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.56.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPublic1bID": {
+            "Properties": {
+                "Description": "SharedApplications prod Sydney public subnet 1b ID",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2b/PublicSubnet1b/subnet-id",
+                "Type": "String",
+                "Value": "subnet-e78ba483"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPublic1cCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "SharedApplications prod Sydney public subnet 1c CIDR",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-cidr",
+                "Type": "String",
+                "Value": "10.207.60.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SharedApplicationsprodPublic1cID": {
+            "Properties": {
+                "Description": "SharedApplications prod Sydney public subnet 1c ID",
+                "Name": "/SharedApplications/prod/vpc/ap-southeast-2c/PublicSubnet1c/subnet-id",
+                "Type": "String",
+                "Value": "subnet-b9b921e0"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SiteBondStCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Bond Street CIDR",
+                "Name": "/origin/bondst/network/cidr",
+                "Type": "String",
+                "Value": "10.67.16.0/21"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SiteDigitalMelbourneCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital Melbourne CIDR",
+                "Name": "/digital/melbourne/network/cidr",
+                "Type": "String",
+                "Value": "10.202.0.0/14"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "SiteDigitalSydneyCIDR": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital Sydney CIDR",
+                "Name": "/digital/sydney/network/cidr",
+                "Type": "String",
+                "Value": "10.202.0.0/14"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCIDETRMbuild": {
+            "Properties": {
+                "Description": "ETRM Build VPC ID",
+                "Name": "/ETRM/build/vpc/vpc-id",
+                "Type": "String",
+                "Value": "vpc-0b60307c749ddf76c"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCIDETRMnonprodCompute": {
+            "Properties": {
+                "Description": "ETRM Non-prod VPC ID",
+                "Name": "/ETRM/nonprod/vpc/vpc-id",
+                "Type": "String",
+                "Value": "vpc-1fcb4c7b"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCIDETRMprod": {
+            "Properties": {
+                "Description": "ETRM Prod VPC ID",
+                "Name": "/ETRM/prod/vpc/vpc-id",
+                "Type": "String",
+                "Value": "vpc-61cc4b05"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCcidrDigitalBuild": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Digital Build VPC CIDR",
+                "Name": "/digital/build/vpc/vpc-cidr",
+                "Type": "String",
+                "Value": "10.201.240.0/20"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCcidrETRMbuild": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Build VPC CIDR",
+                "Name": "/ETRM/build/vpc/vpc-cidr",
+                "Type": "String",
+                "Value": "10.200.140.0/22"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCcidrETRMnonprodCompute": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "ETRM Non-prod VPC CIDR",
+                "Name": "/ETRM/nonprod/vpc/vpc-cidr",
+                "Type": "String",
+                "Value": "10.202.32.0/20, 10.202.64.0/20"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCcidrETRMprod": {
+            "Properties": {
+                "Description": "ETRM Prod VPC CIDRs",
+                "Name": "/ETRM/prod/vpc/vpc-cidr",
+                "Type": "String",
+                "Value": "10.200.32.0/20, 10.200.64.0/20"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCcidrSharedNonprod": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Shared Applications Non-prod Build VPC CIDR",
+                "Name": "/shared/nonprod/vpc/vpc-cidr",
+                "Type": "String",
+                "Value": "10.204.64.0/18"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCcidrSharedProd": {
+            "Properties": {
+                "AllowedPattern": "((\\d{1,3})\\.){3}\\d{1,3}/\\d{1,2}",
+                "Description": "Shared Applications Prod Build VPC CIDR - ap-compute",
+                "Name": "/shared/prod/vpc/vpc-cidr",
+                "Type": "String",
+                "Value": "10.207.0.0/18"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCidDigital": {
+            "Properties": {
+                "Description": "Digitial Build VPC ID",
+                "Name": "/digital/build/vpc/vpc-id",
+                "Type": "String",
+                "Value": "vpc-337f8d57"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCidSharedNonprod": {
+            "Properties": {
+                "Description": "Shared Applications Non-prod Build VPC ID",
+                "Name": "/shared/nonprod/vpc/vpc-id",
+                "Type": "String",
+                "Value": "vpc-8bffaeef"
+            },
+            "Type": "AWS::SSM::Parameter"
+        },
+        "VPCidSharedProd": {
+            "Properties": {
+                "Description": "Shared Applications Prod Build VPC ID - ap-compute",
+                "Name": "/shared/prod/vpc/vpc-id",
+                "Type": "String",
+                "Value": "vpc-a53656c1"
+            },
+            "Type": "AWS::SSM::Parameter"
+        }
+    }
+}
